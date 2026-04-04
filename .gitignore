@@ -1,0 +1,10 @@
+# Ignore compiled and output files
+*.com
+*.lst
+*.exe
+*.res
+*.dll
+# Ignore all files except .asm
+*
+!.gitignore
+!**/*.asm
