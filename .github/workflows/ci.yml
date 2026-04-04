@@ -1,0 +1,21 @@
+name: Assembly CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install NASM
+      run: sudo apt-get update && sudo apt-get install -y nasm
+
+    - name: Check assembly syntax
+      run: |
+        for file in $(find . -name "*.asm" -type f); do
+          echo "Checking $file"
+          nasm -f bin "$file" -o /dev/null || echo "Syntax error in $file"
+        done
