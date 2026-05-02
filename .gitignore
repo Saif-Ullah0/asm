@@ -4,8 +4,9 @@
 *.exe
 *.res
 *.dll
-# Ignore all files except .asm
-*
+
+# Allow these always
 !.gitignore
-!.github/
 !**/*.asm
+!**/**.asm
+*
