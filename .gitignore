@@ -9,4 +9,6 @@
 !.gitignore
 !**/*.asm
 !**/**.asm
-*
+*.pdf
+*.zip
+*.mac
